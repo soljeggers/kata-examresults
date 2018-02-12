@@ -7,14 +7,13 @@ object results extends App  {
 
   def checkExamResults(correctAnswers: List[String], answers: List[String]): Int = {
     val ansCheck: List[(String, String)] = answers.zip(correctAnswers)
-    val result: List[Int] = ansCheck.map(userAnswer => {
-      if (userAnswer._1 == "") 0
-      else if (userAnswer._1 == userAnswer._2) 4
+    val result: List[Int] = ansCheck.map(userAnswers => {
+      if (userAnswers._1 == "") 0
+      else if (userAnswers._1 == userAnswers._2) 4
       else -1})
     println(ansCheck)
     println(result)
     result.sum
   }
   println(checkExamResults(correctAns,userAns))
-
 }
